@@ -13,7 +13,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  
+
   const auth = useAuth()
   const navigate = useNavigate()
 
@@ -37,7 +37,7 @@ function Login() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-md space-y-8 rounded-3xl bg-white/60 backdrop-blur-2xl p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-gray-900/5 [0_8px_30px_rgb(0,0,0,0.2)]">
+      <div className="w-full max-w-md space-y-8 rounded-3xl border border-gray-300 bg-white/60 backdrop-blur-2xl p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-gray-900/5 [0_8px_30px_rgb(0,0,0,0.2)]">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900">
             Welcome back
@@ -46,7 +46,7 @@ function Login() {
             Sign in to your account to continue
           </p>
         </div>
-        
+
         {error && (
           <div className="p-3 bg-red-50 text-red-600 rounded-xl text-sm text-center">
             {error}
@@ -67,7 +67,7 @@ function Login() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full rounded-xl border border-gray-200 bg-white/50 px-4 py-3.5 text-gray-900 placeholder-gray-400 backdrop-blur-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 sm:text-sm transition-all duration-200"
+                className="mt-1 block w-full rounded-xl border border-gray-300 bg-white/50 px-4 py-3.5 text-gray-900 placeholder-gray-400 backdrop-blur-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 sm:text-sm transition-all duration-200"
                 placeholder="admin@example.com"
               />
             </div>
@@ -84,7 +84,7 @@ function Login() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 block w-full rounded-xl border border-gray-200 bg-white/50 px-4 py-3.5 pr-12 text-gray-900 placeholder-gray-400 backdrop-blur-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 sm:text-sm transition-all duration-200"
+                  className="mt-1 block w-full rounded-xl border border-gray-300 bg-white/50 px-4 py-3.5 pr-12 text-gray-900 placeholder-gray-400 backdrop-blur-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 sm:text-sm transition-all duration-200"
                   placeholder="••••••••"
                 />
                 <button
@@ -102,7 +102,7 @@ function Login() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between mt-4">
+          {/* <div className="flex items-center justify-between mt-4">
             <div className="flex items-center">
               <input
                 id="remember-me"
@@ -119,7 +119,7 @@ function Login() {
                 Forgot password?
               </a>
             </div>
-          </div>
+          </div> */}
 
           <div className="pt-2">
             <button
@@ -131,7 +131,7 @@ function Login() {
             </button>
           </div>
         </form>
-        
+
         <p className="mt-8 text-center text-sm text-gray-600">
           Don't have an account?{' '}
           <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500 transition-colors">
