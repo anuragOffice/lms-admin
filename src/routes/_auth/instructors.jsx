@@ -54,7 +54,8 @@ function InstructorsPage() {
                   Created At
                 </th>
                 <th className="px-6 py-5 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                  Updated At
+                  Courses Taught
+
                 </th>
                 <th className="px-6 py-5 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">
                   Actions
@@ -63,8 +64,8 @@ function InstructorsPage() {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {instructors.map((instructor) => (
-                <tr 
-                  key={instructor.id} 
+                <tr
+                  key={instructor.id}
                   className="group hover:bg-gray-50/80 transition-colors duration-200"
                 >
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -87,7 +88,7 @@ function InstructorsPage() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm text-gray-500">
-                      {instructor.updated_at ? new Date(instructor.updated_at).toLocaleDateString() : '-'}
+                      {instructor.courses_taught} Course(s)
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right">
@@ -107,7 +108,7 @@ function InstructorsPage() {
             </tbody>
           </table>
         </div>
-        
+
         {/* Empty State Fallback */}
         {!isLoading && instructors.length === 0 && (
           <div className="px-6 py-12 text-center">
@@ -119,7 +120,7 @@ function InstructorsPage() {
           </div>
         )}
       </div>
-      
+
     </div>
   )
 }
